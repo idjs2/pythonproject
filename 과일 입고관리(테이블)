@@ -1,6 +1,5 @@
 import cx_Oracle
 
-#과일목록 테이블
 conn = cx_Oracle.connect('scott','tiger','localhost:1521/XE')
 cursor = conn.cursor()
 
@@ -18,7 +17,7 @@ conn.commit()
 conn.close()
 
 
-#원산지 테이블
+
 conn = cx_Oracle.connect('scott','tiger','localhost:1521/XE')
 cursor = conn.cursor()
 
@@ -37,8 +36,6 @@ conn.commit()
 conn.close()
 
 
-
-#입고 테이블
 conn = cx_Oracle.connect('scott','tiger','localhost:1521/XE')
 cursor = conn.cursor()
 
@@ -48,7 +45,7 @@ stock1 number(3),
 come date,
 loc_num number(3) constraint loc_f references loc(loc_num)
 )''')
-#cursor.execute("insert into ")
+
 cursor.close()
 conn.commit()
 conn.close()
